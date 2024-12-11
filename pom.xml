@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api</name>
 	<description>Demo project for Spring Boot</description>
-<<<<<<< HEAD
 
 	<properties>
 		<java.version>17</java.version>
@@ -21,69 +20,37 @@
 
 	<dependencies>
 		<!-- Spring Boot Data JPA -->
-=======
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-	<dependencies>
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Spring Boot Web -->
-=======
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Thymeleaf Template Engine -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<!-- PostgreSQL Driver -->
-=======
-
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Spring Boot Testing -->
-=======
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Bean Validation (opcional) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-=======
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 	</dependencies>
 
 	<build>
@@ -94,9 +61,4 @@
 			</plugin>
 		</plugins>
 	</build>
-<<<<<<< HEAD
 </project>
-=======
-
-</project>
->>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
