@@ -34,4 +34,9 @@ public class PacienteController {
     public void deletePaciente(@PathVariable Long id) {
         pacienteService.deletePaciente(id);
     }
+
+    @PutMapping("/{id}")
+    public Optional<Paciente> updatePaciente(@PathVariable Long id, @RequestBody Paciente pacienteAtualizado) {
+        return pacienteService.updatePaciente(id, pacienteAtualizado);
+    }
 }

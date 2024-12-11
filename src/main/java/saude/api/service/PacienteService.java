@@ -29,4 +29,16 @@ public class PacienteService {
     public void deletePaciente(Long id) {
         pacienteRepository.deleteById(id);
     }
+
+    public Optional<Paciente> updatePaciente(Long id, Paciente pacienteAtualizado) {
+        return pacienteRepository.findById(id).map(paciente -> {
+            // Atualiza os campos permitidos
+            paciente.setNome(pacienteAtualizado.getNome());
+            paciente.setDataNascimento(pacienteAtualizado.getDataNascimento());
+            paciente.setCpf(pacienteAtualizado.getCpf());
+            paciente.setTelefone(pacienteAtualizado.getTelefone());
+            // Salva as alterações no banco de dados
+            return pacienteRepository.save(paciente);
+        });
+    }
 }
