@@ -29,6 +29,7 @@ public class PacienteService {
     public void deletePaciente(Long id) {
         pacienteRepository.deleteById(id);
     }
+<<<<<<< HEAD
 
     public Optional<Paciente> updatePaciente(Long id, Paciente pacienteAtualizado) {
         return pacienteRepository.findById(id).map(paciente -> {
@@ -41,4 +42,6 @@ public class PacienteService {
             return pacienteRepository.save(paciente);
         });
     }
+=======
+>>>>>>> 82b0306f282b5197eba7c38ed115a09cd5b69600
 }
