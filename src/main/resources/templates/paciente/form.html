@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulário de Paciente</title>
+</head>
+<body>
+    <h1 th:if="${paciente.id != null}">Editar Paciente</h1>
+    <h1 th:if="${paciente.id == null}">Novo Paciente</h1>
+    <form th:action="@{/paciente-ui}" th:object="${paciente}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" th:field="*{nome}" required>
+        </div>
+        <div>
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" th:field="*{dataNascimento}" required>
+        </div>
+        <div>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" th:field="*{cpf}" required>
+        </div>
+        <div>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" th:field="*{telefone}">
+        </div>
+        <button type="submit">Salvar</button>
+        <a href="/paciente-ui">Cancelar</a>
+    </form>
+</body>
+</html>
