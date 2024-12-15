@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:if="${exame.id != null}">Editar Exame</title>
+    <title th:if="${exame.id == null}">Novo Exame</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 th:if="${exame.id != null}">Editar Exame</h1>
+    <h1 th:if="${exame.id == null}">Novo Exame</h1>
+
+    <form th:action="@{/exame-ui}" th:object="${exame}" method="post">
+        <!-- Campo oculto para o ID -->
+        <input type="hidden" th:field="*{id}">
+
+        <div>
+            <label for="nome">Nome do Exame:</label>
+            <input type="text" id="nome" th:field="*{nome}" required>
+        </div>
+
+        <div>
+            <label for="dataRealizacao">Data de Realização:</label>
+            <input type="date" id="dataRealizacao" th:field="*{dataRealizacao}" required>
+        </div>
+
+        <div>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" th:field="*{resultado}" required>
+        </div>
+
+        <div>
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" th:field="*{paciente.id}" required>
+                <option th:each="paciente : ${pacientes}" 
+                        th:value="${paciente.id}" 
+                        th:text="${paciente.nome}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label for="medico">Médico:</label>
+            <select id="medico" th:field="*{medico.id}" required>
+                <option th:each="medico : ${medicos}" 
+                        th:value="${medico.id}" 
+                        th:text="${medico.nome}"></option>
+            </select>
+        </div>
+
+        <button type="submit">Salvar</button>
+        <a href="/exame-ui">Cancelar</a>
+    </form>
+</body>
+</html>

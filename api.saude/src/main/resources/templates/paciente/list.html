@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Pacientes</title>
+    <!-- Referência ao seu CSS customizado -->
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Pacientes</h1>
+    <!-- Botão Voltar -->
+    <a href="/" class="btn-voltar">
+        <i class="fas fa-home icon icon-back"></i> Voltar
+    </a>
+    <!-- Ícone de Novo Paciente -->
+    <a href="/paciente-ui/novo" class="btn-novo-paciente">
+        <i class="fas fa-plus-circle icon icon-new"></i> Novo Paciente
+    </a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="paciente : ${pacientes}">
+                <td th:text="${paciente.id}"></td>
+                <td th:text="${paciente.nome}"></td>
+                <td th:text="${paciente.dataNascimento}"></td>
+                <td th:text="${paciente.cpf}"></td>
+                <td th:text="${paciente.telefone}"></td>
+                <td>
+                    <!-- Ícone de Editar -->
+                    <a th:href="@{/paciente-ui/editar/{id}(id=${paciente.id})}">
+                        <i class="fas fa-edit icon icon-edit"></i> Editar
+                    </a>
+                    |
+                    <!-- Ícone de Excluir -->
+                    <a th:href="@{/paciente-ui/excluir/{id}(id=${paciente.id})}">
+                        <i class="fas fa-trash icon icon-delete"></i> Excluir
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

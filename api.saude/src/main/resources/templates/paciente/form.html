@@ -2,12 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulário de Paciente</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <h1 th:if="${paciente.id != null}">Editar Paciente</h1>
     <h1 th:if="${paciente.id == null}">Novo Paciente</h1>
+
     <form th:action="@{/paciente-ui}" th:object="${paciente}" method="post">
         <input type="hidden" th:field="*{id}">
+
         <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" th:field="*{nome}" required>

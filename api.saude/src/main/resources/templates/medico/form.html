@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulário de Médico</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 th:if="${medico.id != null}">Editar Médico</h1>
+    <h1 th:if="${medico.id == null}">Novo Médico</h1>
+
+    <form th:action="@{/medico-ui}" th:object="${medico}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" th:field="*{nome}" required>
+        </div>
+        <div>
+            <label for="crm">CRM:</label>
+            <input type="text" id="crm" th:field="*{crm}" required>
+        </div>
+        <div>
+            <label for="especialidade">Especialidade:</label>
+            <input type="text" id="especialidade" th:field="*{especialidade}" required>
+        </div>
+        <div>
+            <label for="dataAdmissao">Data de Admissão:</label>
+            <input type="date" id="dataAdmissao" th:field="*{dataAdmissao}" required>
+        </div>
+        <div>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" th:field="*{telefone}">
+        </div>
+        <button type="submit">Salvar</button>
+        <a href="/medico-ui">Cancelar</a>
+    </form>
+</body>
+</html>

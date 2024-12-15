@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Médicos</title>
+    <!-- Referência ao seu CSS customizado -->
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Médicos</h1>
+    <!-- Botão Voltar -->
+    <a href="/" class="btn-voltar">
+        <i class="fas fa-home icon icon-back"></i> Voltar
+    </a>
+    <!-- Ícone de Novo Médico -->
+    <a href="/medico-ui/novo" class="btn-novo-medico">
+        <i class="fas fa-plus-circle icon icon-new"></i> Novo Médico
+    </a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CRM</th>
+                <th>Especialidade</th>
+                <th>Data de Admissão</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="medico : ${medicos}">
+                <td th:text="${medico.id}"></td>
+                <td th:text="${medico.nome}"></td>
+                <td th:text="${medico.crm}"></td>
+                <td th:text="${medico.especialidade}"></td>
+                <td th:text="${medico.dataAdmissao}"></td>
+                <td th:text="${medico.telefone}"></td>
+                <td>
+                    <!-- Ícone de Editar -->
+                    <a th:href="@{/medico-ui/editar/{id}(id=${medico.id})}">
+                        <i class="fas fa-edit icon icon-edit"></i> Editar
+                    </a>
+                    |
+                    <!-- Ícone de Excluir -->
+                    <a th:href="@{/medico-ui/excluir/{id}(id=${medico.id})}">
+                        <i class="fas fa-trash icon icon-delete"></i> Excluir
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

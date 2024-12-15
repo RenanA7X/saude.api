@@ -1,0 +1,234 @@
+/* Resetando algumas configurações padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    color: #28a745;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para as tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button, .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #125722;
+}
+
+/* Estilo para a navegação */
+.navbar {
+    background-color: #343a40;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de voltar */
+.btn-back {
+    background-color: #28a745;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    background-color: #218838;
+}
+
+/* Personalização de ícones */
+.icon {
+    font-size: 20px;  /* Tamanho padrão */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+    vertical-align: middle;
+}
+
+/* Ícones de ações (Novo, Editar, Excluir) */
+.icon-new {
+    color: #28a745;  /* Cor verde para novo */
+}
+
+.icon-edit {
+    color: #007bff;  /* Cor azul para editar */
+}
+
+.icon-delete {
+    color: #dc3545;  /* Cor vermelha para excluir */
+}
+
+.icon-back {
+    color: #28a745;  /* Cor verde para voltar */
+}
+
+.icon-new:hover {
+    color: #155724;  /* Escurecer o ícone ao passar o mouse */
+}
+
+.icon-edit:hover {
+    color: #0056b3;  /* Escurecer o ícone ao passar o mouse */
+}
+
+.icon-delete:hover {
+    color: #c82333;  /* Escurecer o ícone ao passar o mouse */
+}
+
+.icon-back:hover {
+    color: #155724;  /* Escurecer o ícone de voltar ao passar o mouse */
+}
+
+.btn-novo-exame, .btn-novo-medico, .btn-novo-paciente, .btn-voltar {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-novo-exame:hover, .btn-novo-medico:hover, .btn-novo-paciente:hover, .btn-voltar:hover {
+    text-decoration: none;
+}
+
+/* Modificando os ícones para tamanho maior */
+.icon-large {
+    font-size: 30px;  /* Tamanho maior para os ícones */
+}
+
+/* Estilos para Formulários */
+
+/* Estilo geral para os campos de formulário */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Estilo dos inputs e selects */
+input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #28a745;  /* Cor verde quando em foco */
+    outline: none;
+}
+
+input[type="text"]:required, input[type="date"]:required, select:required {
+    border-color: #dc3545;  /* Cor vermelha para campos obrigatórios */
+}
+
+/* Estilo dos botões de envio */
+button[type="submit"], a[type="button"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover, a[type="button"]:hover {
+    background-color: #125722;
+}
+
+button[type="submit"]:disabled, a[type="button"]:disabled {
+    background-color: #ddd;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+/* Estilo para o botão de voltar */
+a[href*="voltar"], .btn-back {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a[href*="voltar"]:hover, .btn-back:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o link de Cancelar */
+a[href*="Cancelar"] {
+    color: #dc3545;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+a[href*="Cancelar"]:hover {
+    text-decoration: underline;
+}
