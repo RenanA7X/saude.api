@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:if="${agendamento.id != null}">Editar Agendamento</title>
+    <title th:if="${agendamento.id == null}">Novo Agendamento</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 th:if="${agendamento.id != null}">Editar Agendamento</h1>
+    <h1 th:if="${agendamento.id == null}">Novo Agendamento</h1>
+
+    <form th:action="@{/agendamento-ui}" th:object="${agendamento}" method="post">
+        <!-- Campo oculto para o ID -->
+        <input type="hidden" th:field="*{id}">
+
+        <div>
+            <label for="medico">Médico:</label>
+            <select id="medico" th:field="*{medico.id}" required>
+                <option th:each="medico : ${medicos}" 
+                        th:value="${medico.id}" 
+                        th:text="${medico.nome}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" th:field="*{paciente.id}" required>
+                <option th:each="paciente : ${pacientes}" 
+                        th:value="${paciente.id}" 
+                        th:text="${paciente.nome}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label for="dataHora">Data/Hora:</label>
+            <input type="datetime-local" id="dataHora" th:field="*{dataHora}" required>
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <input type="text" id="status" th:field="*{status}" required>
+        </div>
+
+        <button type="submit">Salvar</button>
+        <a href="/agendamento-ui">Cancelar</a>
+    </form>
+</body>
+</html>

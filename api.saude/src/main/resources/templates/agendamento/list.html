@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Agendamentos</title>
+    <!-- Referência ao seu CSS customizado -->
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Agendamentos</h1>
+    <!-- Botão Voltar -->
+    <a href="/" class="btn-voltar">
+        <i class="fas fa-home icon icon-back"></i> Voltar
+    </a>
+    <!-- Ícone de Novo Agendamento -->
+    <a href="/agendamento-ui/novo" class="btn-novo-agendamento">
+        <i class="fas fa-plus-circle icon icon-new"></i> Novo Agendamento
+    </a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Médico</th>
+                <th>Paciente</th>
+                <th>Data/Hora</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="agendamento : ${agendamentos}">
+                <td th:text="${agendamento.id}"></td>
+                <td th:text="${agendamento.medico.nome}"></td>
+                <td th:text="${agendamento.paciente.nome}"></td>
+                <!-- Exibe a data formatada -->
+                <td th:text="${agendamento.dataHoraFormatada}"></td>
+                <td th:text="${agendamento.status}"></td>
+                <td>
+                    <!-- Ícone de Editar -->
+                    <a th:href="@{/agendamento-ui/editar/{id}(id=${agendamento.id})}">
+                        <i class="fas fa-edit icon icon-edit"></i> Editar
+                    </a>
+                    |
+                    <!-- Ícone de Excluir -->
+                    <a th:href="@{/agendamento-ui/excluir/{id}(id=${agendamento.id})}">
+                        <i class="fas fa-trash icon icon-delete"></i> Excluir
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
